@@ -1,9 +1,15 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import {Box} from "@material-ui/core";
 
 function App() {
-  return <div className='App'>Я тут батя228</div>
+
+
+
+  return (
+          <Box className='App'>
+
+          </Box>
+  )
 }
 
 export default App
