@@ -1,15 +1,13 @@
-import React from 'react'
-import {Box} from "@material-ui/core";
+import React from 'react';
 
-function App() {
+import { Box } from '@material-ui/core';
 
-
+export const App = () => {
 
   return (
           <Box className='App'>
 
           </Box>
-  )
-}
+  );
+};
 
-export default App

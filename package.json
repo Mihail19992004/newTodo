@@ -24,6 +24,7 @@
     "@types/react-dropzone": "^5.1.0",
     "@types/react-router-dom": "^5.3.2",
     "axios": "^0.24.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
     "history": "^5.1.0",
     "mobx": "^6.3.8",
     "mobx-react": "^7.2.1",
