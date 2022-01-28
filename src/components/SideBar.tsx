@@ -1,17 +1,17 @@
-import React, { FC, useMemo } from 'react'
-
-import { Link } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
-import { Box, makeStyles } from '@material-ui/core'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import DashboardIcon from '@mui/icons-material/Dashboard'
-import ColorLensIcon from '@mui/icons-material/ColorLens'
-import PeopleIcon from '@mui/icons-material/People'
+import React, { FC, useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Box, makeStyles } from '@material-ui/core';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
+import PeopleIcon from '@mui/icons-material/People';
 // import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import PollIcon from '@mui/icons-material/Poll'
-import SettingsIcon from '@mui/icons-material/Settings'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-const useStyle = makeStyles((theme) => ({
+import PollIcon from '@mui/icons-material/Poll';
+import SettingsIcon from '@mui/icons-material/Settings';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { IconBox } from './IconBox';
+
+const useStyle = makeStyles(() => ({
   sbContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -34,17 +34,17 @@ const useStyle = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-}))
+}));
 
 const SideBar: FC = () => {
-  const classes = useStyle()
-  const { pathname } = useLocation()
-  const activeTab = useMemo((): string => pathname.split('/')[1], [pathname])
-  console.log(`${pathname} , ${activeTab}`)
+
+  const classes = useStyle();
+  const { pathname } = useLocation();
+  const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
+
   return (
     <Box className={classes.sbContainer}>
       <Box className={classes.linksSideBar}>
-        <Box></Box>
         <Link to='Notification'>
           <NotificationsIcon
             className={`${'Notification' === activeTab ? classes.active : null}`}
@@ -60,15 +60,19 @@ const SideBar: FC = () => {
           <PeopleIcon className={`${'People' === activeTab ? classes.active : null}`} />
         </Link>
         <Link to='Poll'>
-          <PollIcon className={`${'Poll' === activeTab ? classes.active : null}`} />
+          <IconBox type='Poll'>
+            <PollIcon />
+          </IconBox>
         </Link>
         <Link to='Settings'>
-          <SettingsIcon className={`${'Settings' === activeTab ? classes.active : null}`} />
+          <IconBox type='Settings'>
+            <SettingsIcon />
+          </IconBox>
         </Link>
       </Box>
       <AccountCircleIcon />
     </Box>
-  )
-}
+  );
+};
 
-export default SideBar
+export default SideBar;

@@ -1,15 +1,17 @@
-import React, { FC } from 'react'
-import { Box, makeStyles } from '@material-ui/core'
+import React, { FC } from 'react';
+import { Box, makeStyles } from '@material-ui/core';
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles(() => ({
   mainContainer: {
     flex: '1',
   },
-}))
+}));
 
 const MainContent: FC = () => {
-  const classes = useStyle()
-  return <Box className={classes.mainContainer}></Box>
-}
+  const classes = useStyle();
+  return (<Box className={classes.mainContainer}>
 
-export default MainContent
+  </Box>);
+};
+
+export default MainContent;
