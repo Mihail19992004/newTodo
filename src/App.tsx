@@ -1,14 +1,23 @@
-import React from 'react'
-import {Box} from "@material-ui/core";
+import React, { FC } from 'react'
+import { Box, makeStyles } from '@material-ui/core'
+import SideBar from './components/SideBar'
+import MainContent from './components/MainContent'
 
-function App() {
+const useStyle = makeStyles((theme) => ({
+  App: {
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'row',
+  },
+}))
 
-
-
+const App: FC = () => {
+  const classes = useStyle()
   return (
-          <Box className='App'>
-
-          </Box>
+    <Box className={classes.App}>
+      <SideBar />
+      <MainContent />
+    </Box>
   )
 }
 
