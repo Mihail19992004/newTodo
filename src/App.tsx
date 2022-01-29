@@ -8,7 +8,7 @@ const useStyle = makeStyles(() => ({
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'row',
-  },
+  }
 }));
 
 export const App: FC = () => {
