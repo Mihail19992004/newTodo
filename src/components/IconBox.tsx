@@ -1,46 +1,54 @@
-import React, { FC, ReactElement, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Box, makeStyles } from '@material-ui/core';
+import React, { FC, ReactElement } from 'react';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core';
 
 const useClasses = makeStyles(() => ({
-  sbContainer: {
+  navlink: {
+    position: 'relative',
+    height: ' 68px',
+    width: '100%',
     display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'nowrap',
-    justifyContent: 'space-between',
-    '& svg': {
-      fill: 'grey',
-      cursor: 'pointer',
-      padding: '15px 25px',
-      '&:hover, &:focus': {
-        fill: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    transition: '0.2s ease-in-out',
+    '&:hover , &:focus': {
+      '& svg': {
+        fill: '#050505',
       },
+    },
+    '& svg': {
+      fill: '#ccccd7',
     },
   },
   active: {
-    fill: 'black !important',
-    borderLeft: '1px solid black',
-  },
-  linksSideBar: {
-    display: 'flex',
-    flexDirection: 'column',
+    '& svg': { fill: 'black !important' },
+    '&::after': {
+      display: 'block',
+      content: '""',
+      backgroundColor: '#050505',
+      height: '50%',
+      width: '2px',
+      left: '0%',
+      top: '25%',
+      position: 'absolute',
+    },
   },
 }));
 
 interface IconBoxProps {
-  type: string,
-  children: ReactElement
+  type: string;
+  active: boolean;
+  children: ReactElement;
 }
 
-export const IconBox: FC<IconBoxProps> = ({ children, type }): ReactElement => {
+export const IconBox: FC<IconBoxProps> = ({ children, type, active }): ReactElement => {
 
-  const { pathname } = useLocation();
   const classes = useClasses();
-  const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
 
   return (
-        <Box className={`${type === activeTab ? classes.active : null}`}>
-            {children}
-        </Box>
+    <Link className={`${classes.navlink} ${active ? classes.active : null}`} to={type}>
+      {children}
+    </Link>
   );
 };
