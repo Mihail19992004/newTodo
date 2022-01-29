@@ -8,6 +8,7 @@ const useStyle = makeStyles(() => ({
 }));
 
 const MainContent: FC = () => {
+  console.log();
   const classes = useStyle();
   return (<Box className={classes.mainContainer}>
 
