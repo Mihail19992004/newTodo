@@ -62,9 +62,8 @@
     }
   },
   "lint-staged": {
-    "*": [
-      "npm run lint:fix",
-      "git add"
+    "*.{ts,tsx}": [
+      "npm run lint:fix"
     ]
   },
   "eslintConfig": {
