@@ -5,7 +5,7 @@ const useStyle = makeStyles(() => ({
   mainContainer: {
     flex: '1',
   },
-}));
+}))
 
 const MainContent: FC = () => {
 
