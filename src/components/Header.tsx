@@ -1,7 +1,5 @@
 import React from 'react';
-import Input from '@mui/material/Input';
-import { Box, Typography, makeStyles } from '@material-ui/core';
-import InputAdornment from '@mui/material/InputAdornment';
+import { Box, Typography, makeStyles, TextField } from '@material-ui/core';
 import FormControl from '@mui/material/FormControl';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -25,12 +23,12 @@ export const Header = () => {
       <Box>2</Box>
       <Box>
         <FormControl sx={{ m: 1, width: '25ch' }} variant='outlined'>
-          <Input
-            startAdornment={
-              <InputAdornment position='start'>
-                <SearchIcon />
-              </InputAdornment>
-            }
+          <TextField variant={'filled'}
+                     InputProps={{
+                       startAdornment: (
+                             <SearchIcon />
+                       ),
+                     }}
           />
         </FormControl>
       </Box>
