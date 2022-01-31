@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export interface Inav {
+export interface InavProps {
   name: string;
   component: ReactElement;
 }
