@@ -12,7 +12,9 @@ const useStyle = makeStyles(() => ({
 }));
 
 export const App: FC = () => {
+
   const classes = useStyle();
+
   return (
     <Box className={classes.App}>
       <SideBar />
