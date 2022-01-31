@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Box, makeStyles } from '@material-ui/core';
+import { AppRouter } from './AppRouter';
 
 const useStyle = makeStyles(() => ({
   mainContainer: {
@@ -10,8 +11,9 @@ const useStyle = makeStyles(() => ({
 
 export const MainContent: FC = () => {
   const classes = useStyle();
-  return (<Box className={classes.mainContainer}>
-
-  </Box>);
+  return (
+    <Box className={classes.mainContainer}>
+      <AppRouter />
+    </Box>
+  );
 };
-

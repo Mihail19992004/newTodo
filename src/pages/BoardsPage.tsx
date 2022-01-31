@@ -1,5 +1,11 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
+import { Header } from '../components/Header';
 
 export const BoardsPage = () => {
-  return <div></div>;
+  return (
+    <Box>
+      <Header />
+    </Box>
+  );
 };

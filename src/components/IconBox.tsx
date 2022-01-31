@@ -22,7 +22,7 @@ const useClasses = makeStyles(() => ({
     },
   },
   active: {
-    '& svg': { 
+    '& svg': {
       fill: '#050505 !important',
     },
     '&::after': {
@@ -45,12 +45,11 @@ interface IconBoxProps {
 }
 
 export const IconBox: FC<IconBoxProps> = ({ children, type, active }): ReactElement => {
-
   const classes = useClasses();
 
   return (
-    <Link className={ `${ classes.navlink } ${ active ? classes.active : null }` } to={ type }>
-      { children }
+    <Link className={`${classes.navlink} ${active ? classes.active : null}`} to={type}>
+      {children}
     </Link>
   );
 };

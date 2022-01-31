@@ -23,8 +23,8 @@ const useStyle = makeStyles(() => ({
     alignItems: 'center',
     padding: '30px 0',
   },
-  sideBarContent : {
-    width : '100%',
+  sideBarContent: {
+    width: '100%',
   },
   linksSideBar: {
     display: 'flex',
@@ -55,12 +55,12 @@ const mainNavigation: InavProps[] = [
     component: <PeopleIcon />,
   },
   {
-    name: 'poll',
+    name: 'chart',
     component: <PollIcon />,
   },
-  { 
+  {
     name: 'settings',
-    component: <SettingsIcon />, 
+    component: <SettingsIcon />,
   },
 ];
 
@@ -70,15 +70,15 @@ export const SideBar: FC = () => {
   const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
 
   return (
-    <Box className={ classes.container }>
-      <Box className={ classes.sideBarContent }>
-        <Box className={ classes.logo }>
-        <ReactLogo width={50}/>
+    <Box className={classes.container}>
+      <Box className={classes.sideBarContent}>
+        <Box className={classes.logo}>
+          <ReactLogo width={50} />
         </Box>
-        <Box className={ classes.linksSideBar }>
-          { mainNavigation.map((e) => (
-            <IconBox key={ e.name } type={ e.name } active={ activeTab === e.name }>
-              { e.component }
+        <Box className={classes.linksSideBar}>
+          {mainNavigation.map((e) => (
+            <IconBox key={e.name} type={e.name} active={activeTab === e.name}>
+              {e.component}
             </IconBox>
           ))}
         </Box>
@@ -87,4 +87,3 @@ export const SideBar: FC = () => {
     </Box>
   );
 };
-
