@@ -10,7 +10,8 @@
 
 # production
 /build
-
+.idea
+/.eslintrc.js
 # misc
 .DS_Store
 .env.local

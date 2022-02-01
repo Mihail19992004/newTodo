@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Box, makeStyles } from '@material-ui/core';
-import SideBar from './components/SideBar';
-import MainContent from './components/MainContent';
+import { SideBar } from './components/SideBar';
+import { MainContent } from './components/MainContent';
 
 const useStyle = makeStyles(() => ({
   App: {
@@ -16,11 +16,9 @@ export const App: FC = () => {
   const classes = useStyle();
 
   return (
-
-    <Box className={classes.App}>
+    <Box className={ classes.App }>
       <SideBar />
       <MainContent />
     </Box>
   );
 };
-
