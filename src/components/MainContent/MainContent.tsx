@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box } from '@material-ui/core';
-import { AppRouter } from '../AppRouter/AppRouter';
+import { AppRouter } from '../AppRouter';
 import { useClasses } from './MainContent.style';
 
 export const MainContent: FC = () => {
