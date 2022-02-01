@@ -1,16 +1,16 @@
-import React, { FC, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Box, makeStyles } from '@material-ui/core';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ExtensionIcon from '@mui/icons-material/Extension';
-import PeopleIcon from '@mui/icons-material/People';
-import PollIcon from '@mui/icons-material/Poll';
-import SettingsIcon from '@mui/icons-material/Settings';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { ReactComponent as ReactLogo } from '../assets/react-js.svg';
-import { IconBox } from './IconBox';
-import { InavProps } from '../features';
+import React, { FC, useMemo } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Box, makeStyles } from '@material-ui/core'
+import NotificationsIcon from '@mui/icons-material/Notifications'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import ExtensionIcon from '@mui/icons-material/Extension'
+import PeopleIcon from '@mui/icons-material/People'
+import PollIcon from '@mui/icons-material/Poll'
+import SettingsIcon from '@mui/icons-material/Settings'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import { ReactComponent as ReactLogo } from '../assets/react-js.svg'
+import { IconBox } from './IconBox'
+import { NavProps } from '../features'
 
 const useStyle = makeStyles(() => ({
   container: {
@@ -35,9 +35,9 @@ const useStyle = makeStyles(() => ({
     marginBottom: ' 15px',
     textAlign: 'center',
   },
-}));
+}))
 
-const mainNavigation: InavProps[] = [
+const mainNavigation: NavProps[] = [
   {
     name: 'notification',
     component: <NotificationsIcon />,
@@ -62,12 +62,12 @@ const mainNavigation: InavProps[] = [
     name: 'settings',
     component: <SettingsIcon />,
   },
-];
+]
 
 export const SideBar: FC = () => {
-  const classes = useStyle();
-  const { pathname } = useLocation();
-  const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
+  const classes = useStyle()
+  const { pathname } = useLocation()
+  const activeTab = useMemo((): string => pathname.split('/')[1], [pathname])
 
   return (
     <Box className={classes.container}>
@@ -85,5 +85,5 @@ export const SideBar: FC = () => {
       </Box>
       <AccountCircleIcon />
     </Box>
-  );
-};
+  )
+}

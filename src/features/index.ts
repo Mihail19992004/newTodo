@@ -1,1 +1,1 @@
-export type { InavProps } from './InavProps';
+export type { NavProps } from "./NavProps"
