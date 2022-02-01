@@ -1,9 +1,7 @@
-import React, { FC, ReactElement } from 'react';
-import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 
-const useClasses = makeStyles(() => ({
-  navlink: {
+export const useClasses = makeStyles(() => ({
+  navLink: {
     position: 'relative',
     height: ' 68px',
     width: '100%',
@@ -37,19 +35,3 @@ const useClasses = makeStyles(() => ({
     },
   },
 }));
-
-interface IconBoxProps {
-  type: string;
-  active: boolean;
-  children: ReactElement;
-}
-
-export const IconBox: FC<IconBoxProps> = ({ children, type, active }): ReactElement => {
-  const classes = useClasses();
-
-  return (
-    <Link className={`${classes.navlink} ${active ? classes.active : null}`} to={type}>
-      {children}
-    </Link>
-  );
-};

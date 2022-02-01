@@ -1,5 +1,8 @@
 import React from 'react';
 
 export const NotificationsPage = () => {
-  return <div>Notifications</div>;
+
+  return (
+      <div>Notifications</div>
+  );
 };

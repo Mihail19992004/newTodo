@@ -14,18 +14,18 @@ export interface IRoute {
 
 export enum RouteNames {
   NOTIFICATION = '/notification',
-  BOARDSPAGE = '/boards',
-  EXTENSIONPAGE = '/extentsions',
-  PEOPLEPAGE = '/people',
-  CHARTPAGE = '/chart',
-  SETTINGSPAGE = '/settings',
+  BOARDS_PAGE = '/boards',
+  EXTENSION_PAGE = '/extensions',
+  PEOPLE_PAGE = '/people',
+  CHART_PAGE = '/chart',
+  SETTINGS_PAGE = '/settings',
 }
 
 export const boardsRoutes: IRoute[] = [
   { path: RouteNames.NOTIFICATION, exact: true, component: NotificationsPage },
-  { path: RouteNames.BOARDSPAGE, exact: true, component: BoardsPage },
-  { path: RouteNames.EXTENSIONPAGE, exact: true, component: ExtensionPage },
-  { path: RouteNames.PEOPLEPAGE, exact: true, component: PeoplePage },
-  { path: RouteNames.CHARTPAGE, exact: true, component: ChartPage },
-  { path: RouteNames.SETTINGSPAGE, exact: true, component: SettingsPage },
+  { path: RouteNames.BOARDS_PAGE, exact: true, component: BoardsPage },
+  { path: RouteNames.EXTENSION_PAGE, exact: true, component: ExtensionPage },
+  { path: RouteNames.PEOPLE_PAGE, exact: true, component: PeoplePage },
+  { path: RouteNames.CHART_PAGE, exact: true, component: ChartPage },
+  { path: RouteNames.SETTINGS_PAGE, exact: true, component: SettingsPage },
 ];
