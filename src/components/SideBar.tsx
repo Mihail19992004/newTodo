@@ -42,6 +42,7 @@ const SideBar: FC = () => {
   const { pathname } = useLocation();
   const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
 
+
   return (
     <Box className={classes.sbContainer}>
       <Box className={classes.linksSideBar}>
