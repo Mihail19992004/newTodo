@@ -1,20 +1,23 @@
 import React from 'react';
-import { modalStore } from './ModalStore';
+import  modalStore from './ModalStore';
+import { observer } from 'mobx-react';
 
-const Modals = () => {
-    
-  const { modals } = modalStore;
+const Modals = observer(() => {
+
+  const { modalsMap } = modalStore;
+
   // eslint-disable-next-line no-console
-  console.log(modals);
+  // console.log(modalsMap);
+
   return (
             <>
-            {
-                !!modals.length && modals.map(modal => (
-                  { modal }
-                ))   
-            }
+                {
+                    modalsMap.map(({ element }) => (
+                      element 
+                    ))
+                }
             </>
   );
-};
+});
 
 export default Modals;

@@ -8,9 +8,9 @@ class ModalStore {
     makeAutoObservable(this);
   }
       
-  modalsMap = new Map<string, ReactElement>();
+  modalsMap: Array<{ key: string, element: ReactElement }> = [];
 
-  modals = Array(this.modalsMap);
+
 
   isOpenModal: boolean = false;
 
@@ -33,16 +33,13 @@ class ModalStore {
   };
   
   createModal = (modal: ReactElement, key: string) => {
-    this.modalsMap.set(
-      key,
-      (<ModalComponent key={key}>{modal}</ModalComponent>),
-    );
+    this.modalsMap.push({ key, element: <ModalComponent key={key}>{modal}</ModalComponent> });
   };
   
-  removeModal = (key: string) => {
-    this.modalsMap.delete(key);
+  removeModal = (keyEl: string) => {
+    this.modalsMap = this.modalsMap.filter(({ key }) => keyEl !== key);
   };
   
 }
 
-export const modalStore = new ModalStore();
+export default new ModalStore();

@@ -3,6 +3,7 @@ import { Box, makeStyles } from '@material-ui/core';
 import SideBar from './components/SideBar';
 import MainContent from './components/MainContent';
 import { observer } from 'mobx-react';
+import Modals from './components/Modal/Modals';
 
 const useStyle = makeStyles(() => ({
   App: {
@@ -20,6 +21,7 @@ export const App: FC = observer(() => {
   return (
 
         <Box className={classes.App}>
+            <Modals />
           <SideBar />
           <MainContent />
         </Box>

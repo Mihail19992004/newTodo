@@ -10,6 +10,8 @@ import PollIcon from '@mui/icons-material/Poll';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { IconBox } from './IconBox';
+import modalStore from './Modal/ModalStore';
+import { AuthModal } from './Modal/AuthModal/AuthModal';
 
 const useStyle = makeStyles(() => ({
   sbContainer: {
@@ -41,7 +43,7 @@ const SideBar: FC = () => {
   const classes = useStyle();
   const { pathname } = useLocation();
   const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
-
+  const { createModal } = modalStore;
 
   return (
     <Box className={classes.sbContainer}>
@@ -71,7 +73,7 @@ const SideBar: FC = () => {
           </IconBox>
         </Link>
       </Box>
-      <AccountCircleIcon />
+      <AccountCircleIcon onClick={() => createModal(<AuthModal />, 'test')} />
     </Box>
   );
 };

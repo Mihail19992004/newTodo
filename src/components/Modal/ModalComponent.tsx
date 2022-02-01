@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import { Box, IconButton } from '@material-ui/core';
 import { useClasses } from './ModalComponent.style';
-import { modalStore } from './ModalStore';
+import modalStore from './ModalStore';
 import { observer } from 'mobx-react';
 import CloseIcon from '@mui/icons-material/Close';
 
