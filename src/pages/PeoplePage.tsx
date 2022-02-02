@@ -1,5 +1,7 @@
-import React from 'react';
+import React from 'react'
+import { Box } from '@material-ui/core'
 
 export const PeoplePage = () => {
-  return <div>People</div>;
-};
+  
+  return <Box>People</Box>
+}

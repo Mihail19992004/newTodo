@@ -10,6 +10,7 @@ const useStyle = makeStyles(() => ({
 }));
 
 export const MainContent: FC = () => {
+  
   const classes = useStyle();
   return (
     <Box className={classes.mainContainer}>

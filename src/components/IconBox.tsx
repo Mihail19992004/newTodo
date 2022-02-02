@@ -1,6 +1,6 @@
-import React, { FC, ReactElement } from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core';
+import React, { FC, ReactElement } from 'react'
+import { Link } from 'react-router-dom'
+import { makeStyles } from '@material-ui/core'
 
 const useClasses = makeStyles(() => ({
   navlink: {
@@ -36,20 +36,21 @@ const useClasses = makeStyles(() => ({
       position: 'absolute',
     },
   },
-}));
+}))
 
 interface IconBoxProps {
-  type: string;
-  active: boolean;
-  children: ReactElement;
+  type: string
+  active: boolean
+  children: ReactElement
 }
 
 export const IconBox: FC<IconBoxProps> = ({ children, type, active }): ReactElement => {
-  const classes = useClasses();
+
+  const classes = useClasses()
 
   return (
-    <Link className={`${classes.navlink} ${active ? classes.active : null}`} to={type}>
-      {children}
+    <Link className={ `${ classes.navlink } ${ active ? classes.active : null }`} to={ type }>
+      { children }
     </Link>
-  );
-};
+  )
+}
