@@ -1,10 +1,10 @@
-import React from 'react'
-import { BoardsPage } from '../pages/BoardsPage'
-import { ChartPage } from '../pages/ChartPage'
-import { ExtensionPage } from '../pages/ExtensionPage'
-import { NotificationsPage } from '../pages/NotificationsPage'
-import { PeoplePage } from '../pages/PeoplePage'
-import { SettingsPage } from '../pages/SettingsPage'
+import React from 'react';
+import { BoardsPage } from '../pages/BoardsPage';
+import { ChartPage } from '../pages/ChartPage';
+import { ExtensionPage } from '../pages/ExtensionPage';
+import { NotificationsPage } from '../pages/NotificationsPage';
+import { PeoplePage } from '../pages/PeoplePage';
+import { SettingsPage } from '../pages/SettingsPage';
 
 export interface IRoute {
   path: string
@@ -28,4 +28,5 @@ export const boardsRoutes: IRoute[] = [
   { path: RouteNames.PEOPLE_PAGE, component: PeoplePage },
   { path: RouteNames.CHART_PAGE, component: ChartPage },
   { path: RouteNames.SETTINGS_PAGE, component: SettingsPage },
-]
+];
+
