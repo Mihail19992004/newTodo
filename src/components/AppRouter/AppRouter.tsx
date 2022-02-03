@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { boardsRoutes } from '../../router';
+import { boardsRoutes } from '../../routes';
 
 export const AppRouter = () => {
 

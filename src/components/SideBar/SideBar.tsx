@@ -14,12 +14,12 @@ export const SideBar: FC = () => {
   const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
 
   return (
-    <Box className={classes.container}>
-      <Box className={classes.sideBarContent}>
-        <Box className={classes.logo}>
+    <Box className={ classes.container }>
+      <Box className={ classes.sideBarContent }>
+        <Box className={ classes.logo }>
           <ReactLogo width={ 50 } />
         </Box>
-        <Box className={classes.linksSideBar}>
+        <Box className={ classes.linksSideBar }>
           { mainNavigation.map((route) => (
             <IconBox key={ route.name } type={ route.name } active={ activeTab === route.name }>
               { route.component }

@@ -16,7 +16,7 @@ export const App: FC = () => {
   const classes = useClasses();
 
   return (
-    <Box className={classes.App}>
+    <Box className={ classes.App }>
       <SideBar />
       <MainContent />
     </Box>

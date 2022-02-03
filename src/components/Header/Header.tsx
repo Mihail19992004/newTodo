@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
 import { SearchTextField, useClasses } from './Header.style';
-import { BoardMenu } from '../BoardMenu';
+import { BoardMenu } from '../BoardMenu/BoardMenu';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 
 export const Header = () => {
@@ -16,7 +16,7 @@ export const Header = () => {
   return (
     <Box className={ classes.container }>
       <Box className={ classes.nameHeader }>
-        <Typography variant='h4' className={ classes.namePage }>
+        <Typography variant='h4' className={ classes.namePage } >
           My board
         </Typography>
       </Box>

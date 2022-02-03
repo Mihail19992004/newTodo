@@ -5,7 +5,7 @@ import { IconButton, Menu, MenuItem } from '@mui/material';
 const options: string[] = ['del', 'none'];
 
 export const BoardMenu = () => {
-  
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -20,10 +20,10 @@ export const BoardMenu = () => {
       <IconButton
         aria-label='more'
         id='long-button'
-        aria-controls={open ? 'long-menu' : undefined}
-        aria-expanded={open ? 'true' : undefined}
+        aria-controls={ open ? 'long-menu' : undefined }
+        aria-expanded={ open ? 'true' : undefined } 
         aria-haspopup='true'
-        onClick={handleClick}
+        onClick={ handleClick }
       >
         <MoreHorizIcon />
       </IconButton>
@@ -32,9 +32,9 @@ export const BoardMenu = () => {
         MenuListProps={{
           'aria-labelledby': 'long-button',
         }}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
+        anchorEl={ anchorEl }
+        open={ open }
+        onClose={ handleClose }
         PaperProps={{
           style: {
             maxHeight: 20 * 4.5,
@@ -43,8 +43,8 @@ export const BoardMenu = () => {
         }}
       >
         {options.map((option) => (
-          <MenuItem key={option} selected={option === 'del'} onClick={handleClose}>
-            {option}
+          <MenuItem key={ option } selected={ option === 'del' } onClick={ handleClose }>
+            { option }
           </MenuItem>
         ))}
       </Menu>
