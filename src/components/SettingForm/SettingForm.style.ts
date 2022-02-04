@@ -12,8 +12,8 @@ export const useClasses = makeStyles((theme) => ({
     paddingTop: theme.spacing(10),
     width: '50%',
     display: 'flex',
-    alignItems: 'center',
-    flexFlow: 'row',
+    flexFlow: 'column',
+    alignItems: 'flex-start',
   },
   namePage: {
     fontWeight: 'bold',

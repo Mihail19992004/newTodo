@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import { Button, makeStyles } from '@material-ui/core';
 import { SettingsFormProps } from '../features/Settings';
 import { useSettingForm } from '../components/SettingForm/SettingForm';
+import authStore from '../stores/Authorization/Authorization';
 
 const useClasses = makeStyles(() => ({
   container: {
@@ -34,6 +35,7 @@ export const SettingsPage = () => {
   const { Form, isValid, isDirty } = useSettingForm({
     id: 'Setting_form',
     onSubmit: onSubmitForm,
+    logout: authStore.logout,
   });
 
 
