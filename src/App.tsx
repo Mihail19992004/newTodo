@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, Suspense } from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 import { SideBar } from './components/SideBar';
 import { MainContent } from './components/MainContent';
+import { Translate } from './components/Translate/Translate';
 
 const useStyle = makeStyles(() => ({
   App: {
@@ -16,9 +17,13 @@ export const App: FC = () => {
   const classes = useStyle();
 
   return (
-    <Box className={ classes.App }>
-      <SideBar />
-      <MainContent />
-    </Box>
+      <Suspense fallback={ <div>...Loading</div> }>
+          <Translate>
+              <Box className={ classes.App }>
+                  <SideBar />
+                  <MainContent />
+              </Box>
+          </Translate>
+      </Suspense>
   );
 };
