@@ -3,25 +3,25 @@ import {
   Box,
   Typography,
   InputAdornment,
-  Button,
-} from '@material-ui/core';
+  Button } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
 import { SearchTextField, useClasses } from './Header.style';
+import { t } from 'i18next';
 
 export const Header = () => {
   
   const classes = useClasses();
-  
+
   return (
     <Box className={classes.container}>
       <Box>
         <Typography variant='h4' className={classes.namePage}>
-          My board
+            { t('My board') }
         </Typography>
       </Box>
       <Box className={classes.gridInput}>
         <SearchTextField
-          placeholder='Search text'
+          placeholder={ t('Search task') }
           InputProps={{
             classes: { input: classes.searchInput },
             startAdornment: (
@@ -37,7 +37,7 @@ export const Header = () => {
           variant='contained'
           color='primary'
         >
-          Create new
+            { t('Create new') }
         </Button>
       </Box>
     </Box>
