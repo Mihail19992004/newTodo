@@ -4,6 +4,7 @@ import { SideBar } from './components/SideBar';
 import { MainContent } from './components/MainContent';
 import { Translate } from './components/Translate/Translate';
 
+
 const useStyle = makeStyles(() => ({
   App: {
     minHeight: '100vh',
