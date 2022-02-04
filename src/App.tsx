@@ -3,6 +3,7 @@ import { Box, makeStyles } from '@material-ui/core';
 import { SideBar } from './components/SideBar';
 import { MainContent } from './components/MainContent';
 import { Translate } from './components/Translate/Translate';
+import { Authorization } from './components/Authorization/Authorization';
 
 
 const useStyle = makeStyles(() => ({
@@ -20,10 +21,12 @@ export const App: FC = () => {
   return (
       <Suspense fallback={ <div>...Loading</div> }>
           <Translate>
-              <Box className={ classes.App }>
-                  <SideBar />
-                  <MainContent />
-              </Box>
+            <Authorization>
+                <Box className={ classes.App }>
+                    <SideBar />
+                    <MainContent />
+                </Box>
+            </Authorization>
           </Translate>
       </Suspense>
   );
