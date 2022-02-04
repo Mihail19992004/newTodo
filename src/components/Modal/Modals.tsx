@@ -1,23 +1,22 @@
 import React from 'react';
 import  modalStore from './ModalStore';
 import { observer } from 'mobx-react';
+import { ModalComponent } from './ModalComponent';
 
-const Modals = observer(() => {
+export const Modals = observer(() => {
 
   const { modalsMap } = modalStore;
-
-  // eslint-disable-next-line no-console
-  // console.log(modalsMap);
 
   return (
             <>
                 {
-                    modalsMap.map(({ element }) => (
-                      element 
+                    modalsMap.map(({ element, key }) => (
+                        <ModalComponent key={Date.now()} modalId={key}>
+                            {element}
+                        </ModalComponent>
+                        
                     ))
                 }
             </>
   );
 });
-
-export default Modals;

@@ -6,16 +6,17 @@ import { observer } from 'mobx-react';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface ModalComponentProps {
-  key: string;
   children: ReactElement;
+  modalId: string
 }
 
-export const ModalComponent: FC<ModalComponentProps> = observer(({ children, key }) => {
+export const ModalComponent: FC<ModalComponentProps> = observer(({ children, modalId }) => {
     
   const classes = useClasses();
   const { removeModal } = modalStore;
+
   const closeModal = () => {
-    removeModal(key);
+    removeModal(modalId);
   };
 
   return (

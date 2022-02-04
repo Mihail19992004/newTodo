@@ -1,11 +1,14 @@
 import React, { FC } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-// eslint-disable-next-line import/namespace
 import { AuthorizationPage } from '../../pages/AuthorizationPage';
+import authStore from '../../stores/Authorization/Authorization';
+import { observer } from 'mobx-react';
 
-export const Authorization: FC = ({ children }) => {
+export const Authorization: FC = observer(({ children }) => {
 
-  if (true) {
+  const { isAuth } = authStore;
+    
+  if (!isAuth) {
     return (
             <Switch>
                 <Route path='/login' component={ AuthorizationPage } />
@@ -19,4 +22,4 @@ export const Authorization: FC = ({ children }) => {
             { children }
         </>
   );
-};
+});

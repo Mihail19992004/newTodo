@@ -1,14 +1,14 @@
 import React, { FormEvent, useMemo, useState } from 'react';
 import { SettingsFormProps, UseSettingFormProps, UseSettingForm } from '../../features/Settings';
 import { FormProvider, useController, useForm } from 'react-hook-form';
-import { MenuItem, Box, Typography } from '@material-ui/core';
+import { MenuItem, Box, Typography, Button } from '@material-ui/core';
 import Select from '@material-ui/core/Select';
 import { useTranslation } from 'react-i18next';
 import { useClasses } from './SettingForm.style';
 
 export const useSettingForm = (props: UseSettingFormProps): UseSettingForm => {
 
-  const { id, onSubmit, onReset } = props;
+  const { id, onSubmit, onReset, logout } = props;
 
   const locale = useMemo((): 'ru' | 'en' => {
     const lang = localStorage.getItem('i18nextLng');
@@ -70,6 +70,12 @@ export const useSettingForm = (props: UseSettingFormProps): UseSettingForm => {
                     <MenuItem value="en">{ t('English') }</MenuItem>
                   </Select>
                 </Box>
+                <Button
+                  variant='outlined'
+                  onClick={logout}
+                >
+                  { t('Logout') }
+                </Button>
               </Box>
             </form>
           </Box>

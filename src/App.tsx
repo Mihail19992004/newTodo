@@ -4,7 +4,7 @@ import { SideBar } from './components/SideBar';
 import { MainContent } from './components/MainContent';
 import { Translate } from './components/Translate/Translate';
 import { Authorization } from './components/Authorization/Authorization';
-
+import { Notification } from './components/Notification/Notification';
 
 const useStyle = makeStyles(() => ({
   App: {
@@ -22,12 +22,14 @@ export const App: FC = () => {
 
       <Suspense fallback={ <div>...Loading</div> }>
           <Translate>
-            <Authorization>
-                <Box className={ classes.App }>
-                    <SideBar />
-                    <MainContent />
-                </Box>
-            </Authorization>
+              <Notification>
+                <Authorization>
+                    <Box className={ classes.App }>
+                        <SideBar />
+                        <MainContent />
+                    </Box>
+                </Authorization>
+              </Notification>
           </Translate>
       </Suspense>
   );

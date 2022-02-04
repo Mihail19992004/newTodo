@@ -7,5 +7,13 @@
   "Save": "Save",
   "Language setting": "Language setting",
   "Application language": "Application language",
-  "Application setting": "Application setting"
+  "Application setting": "Application setting",
+  "Authorization": "Authorization",
+  "User name": "User name",
+  "Logout": "Logout",
+  "Password": "Password",
+  "Login": "Login",
+  "Registration": "Registration",
+  "Registration error": "Registration error",
+  "Login error": "Login error"
 }

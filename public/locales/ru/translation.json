@@ -7,5 +7,13 @@
   "Save": "Сохранить",
   "Language setting": "Настройка языка",
   "Application language": "Язык приложения",
-  "Application setting": "Настройки"
+  "Application setting": "Настройки",
+  "Authorization": "Авторизация",
+  "User name": "Имя пользователя",
+  "Logout": "Выйти из системы",
+  "Password": "Пароль",
+  "Login": "Вход",
+  "Registration": "Регистрация",
+  "Registration error": "Ошибка при регистрации",
+  "Login error": "Ошибка при входе"
 }

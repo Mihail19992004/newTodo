@@ -3,15 +3,18 @@ import { useLocation } from 'react-router-dom';
 import { Box } from '@material-ui/core';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as ReactLogo } from '../../assets/react-js.svg';
-import { IconBox } from '../IconBox/IconBox';
+import { IconBox } from '../IconBox';
 import { useClasses } from './SideBar.style';
 import { mainNavigation } from './SideBar.routes';
+import modalStore from '../Modal/ModalStore';
+import { AuthModal } from '../Modal/AuthModal/AuthModal';
 
 export const SideBar: FC = () => {
 
   const classes = useClasses();
   const { pathname } = useLocation();
   const activeTab = useMemo((): string => pathname.split('/')[1], [pathname]);
+  const { createModal } = modalStore;
 
   return (
     <Box className={classes.container}>
@@ -27,7 +30,7 @@ export const SideBar: FC = () => {
           ))}
         </Box>
       </Box>
-      <AccountCircleIcon />
+      <AccountCircleIcon onClick={() => createModal(<AuthModal/>, 'test')} />
     </Box>
   );
 };

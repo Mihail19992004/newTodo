@@ -1,6 +1,7 @@
 import { PATH } from './Path';
 import { httpClient } from '../httpClient';
 import { AxiosResponse } from 'axios';
+import { AuthorizationProps } from '../pages/AuthorizationPage';
 
 interface UserResponseProps {
   id: string;
@@ -18,13 +19,13 @@ interface AuthResponseProps {
 
 export class AuthorizationRest {
     
-  registration = (username: string, password: string): Promise<AuthResponseProps> => {
-    return httpClient.post( PATH.AUTH_REGISTRATION, { username, password })
+  registration = (user: AuthorizationProps): Promise<AuthResponseProps> => {
+    return httpClient.post( PATH.AUTH_REGISTRATION, { ...user })
       .then(({ data }: AxiosResponse<AuthResponseProps>) => data);
   };
   
-  login = (username: string, password: string): Promise<AuthResponseProps> => {
-    return httpClient.post( PATH.AUTH_LOGIN, { username, password })
+  login = (user: AuthorizationProps): Promise<AuthResponseProps> => {
+    return httpClient.post( PATH.AUTH_LOGIN, { ...user })
       .then(({ data }: AxiosResponse<AuthResponseProps>) => data);
   }; 
     
