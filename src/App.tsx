@@ -19,6 +19,7 @@ export const App: FC = () => {
   const classes = useStyle();
 
   return (
+
       <Suspense fallback={ <div>...Loading</div> }>
           <Translate>
             <Authorization>
@@ -31,3 +32,5 @@ export const App: FC = () => {
       </Suspense>
   );
 };
+
+

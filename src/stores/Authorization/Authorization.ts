@@ -14,7 +14,13 @@ export class AuthorizationStore {
   };
   
   registration = (username: string, password: string) => {
-    services.authorization.registration(username, password);
+    services.authorization.registration(username, password).then(() => {
+
+    });
+  };
+  
+  logout = () => {
+    
   };
     
 }
