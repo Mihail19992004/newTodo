@@ -4,6 +4,7 @@ import {
   Typography,
   InputAdornment,
   Button,
+  IconButton,
 } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
 import { SearchTextField, useClasses } from './Header.style';
@@ -22,7 +23,9 @@ export const Header = () => {
       </Box>
       <Box className={ classes.flexInput }>
         <Box className={ classes.searchCon }>
-          <InsertLinkIcon className={ classes.linkSvg } />
+          <IconButton>
+            <InsertLinkIcon className={ classes.linkSvg } />
+          </IconButton>
           <BoardMenu />
           <SearchTextField
             placeholder='Search text'
