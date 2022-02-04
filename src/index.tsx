@@ -6,13 +6,15 @@ import { App } from './App';
 
 import './i18n';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
-
-  document.getElementById('root'),
-);
+try {
+  ReactDOM.render(
+        <Router>
+            <App />
+        </Router>,
+        document.getElementById('root'),
+  );
+} catch (error) {
+  // eslint-disable-next-line no-console
+  console.error('React render error: ', error);
+}
 
