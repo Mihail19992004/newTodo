@@ -20,5 +20,6 @@
   "Field validation error": "Field validation error",
   "User with the same name already exists": "User with the same name already exists",
   "Username does not exist": "Username does not exist",
-  "Wrong password": "Wrong password"
+  "Wrong password": "Wrong password",
+  "Add Todo": "Add Todo"
 }

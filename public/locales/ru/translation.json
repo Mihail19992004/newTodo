@@ -20,5 +20,6 @@
   "Field validation error": "Ошибка валидации полей",
   "User with the same name already exists": "Пользователь с таким именем уже существует",
   "Username does not exist": "Пользователя с таким именем не существует",
-  "Wrong password": "Невеверный паполь"
+  "Wrong password": "Невеверный паполь",
+  "Add Todo": "Добавить задачу"
 }
