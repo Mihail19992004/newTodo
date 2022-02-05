@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-export const useClasses = makeStyles((theme) => ({
+export const useClasses = makeStyles(() => ({
   container: {
     position: 'fixed',
     top: 0,
@@ -15,8 +15,6 @@ export const useClasses = makeStyles((theme) => ({
   },
   modal: {
     position: 'relative',
-    width: theme.spacing(50),
-    height: theme.spacing(50),
     background: 'white',
     borderRadius: 20,
   },

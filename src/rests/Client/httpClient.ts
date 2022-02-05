@@ -1,7 +1,5 @@
 import { httpClientConfig } from './AxiosPreset';
-// interface Params {
-//   params: Record<string, unknown>
-// }
+import authorization from '../../stores/Authorization/Authorization';
 
 class HttpClient {
     
@@ -13,6 +11,9 @@ class HttpClient {
       // baseURL: 'http://localhost:5000',
       url,
       data,
+      headers: {
+        'Authorization': `Bearer ${ authorization.isAuth ? authorization.token ?? null : null}`,
+      },
     }).then(response => response);
   };
   
