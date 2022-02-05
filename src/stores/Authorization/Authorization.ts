@@ -1,8 +1,6 @@
 import { services } from '../../services';
 import { makeAutoObservable } from 'mobx';
 import { AuthorizationProps } from '../../pages/AuthorizationPage';
-import notification from '../Notification/Notification';
-import { t } from 'i18next';
 class AuthorizationStore {
   
   constructor() {
@@ -11,9 +9,12 @@ class AuthorizationStore {
   }
   
   isAuth: boolean = false;
+
+  token: string | null; 
     
   setIsAuth = (token: string | null) => {
     this.isAuth = !!token;
+    this.token = token;
     if (!!token) {
       localStorage.setItem('token', token);
     } else {
@@ -26,14 +27,14 @@ class AuthorizationStore {
       this.setIsAuth(token);
 
       
-    }).catch(() => notification.setNotification({ severity: 'error', text: t('Login error') }));
+    });
   };
   
   registration = (data: AuthorizationProps) => {
     services.authorization.registration(data).then(({ token }) => {
       this.setIsAuth(token);
       
-    }).catch(() => notification.setNotification({ text: t('Registration error'), severity: 'error' }));
+    });
   };
   
   logout = () => {

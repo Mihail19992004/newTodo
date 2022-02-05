@@ -1,5 +1,4 @@
-import axios from 'axios';
-
+import { httpClientConfig } from './AxiosPreset';
 // interface Params {
 //   params: Record<string, unknown>
 // }
@@ -8,7 +7,7 @@ class HttpClient {
     
   private client = ( method: 'post' | 'put' | 'get' | 'delete', url: string, data?: Record<string, unknown> ) => {
 
-    return axios({
+    return httpClientConfig({
       method,
       baseURL: 'https://rest-service-todo.herokuapp.com/',
       // baseURL: 'http://localhost:5000',

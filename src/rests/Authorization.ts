@@ -1,5 +1,5 @@
 import { PATH } from './Path';
-import { httpClient } from '../httpClient';
+import { httpClient } from './Client/httpClient';
 import { AxiosResponse } from 'axios';
 import { AuthorizationProps } from '../pages/AuthorizationPage';
 

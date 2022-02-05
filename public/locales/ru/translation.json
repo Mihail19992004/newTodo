@@ -15,5 +15,10 @@
   "Login": "Вход",
   "Registration": "Регистрация",
   "Registration error": "Ошибка при регистрации",
-  "Login error": "Ошибка при входе"
+  "Login error": "Ошибка при входе",
+  "Server error. Please try again later": "Ошибка сервера. Повторите попытку позже",
+  "Field validation error": "Ошибка валидации полей",
+  "User with the same name already exists": "Пользователь с таким именем уже существует",
+  "Username does not exist": "Пользователя с таким именем не существует",
+  "Wrong password": "Невеверный паполь"
 }

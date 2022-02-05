@@ -15,5 +15,10 @@
   "Login": "Login",
   "Registration": "Registration",
   "Registration error": "Registration error",
-  "Login error": "Login error"
+  "Login error": "Login error",
+  "Server error. Please try again later": "Server error. Please try again later",
+  "Field validation error": "Field validation error",
+  "User with the same name already exists": "User with the same name already exists",
+  "Username does not exist": "Username does not exist",
+  "Wrong password": "Wrong password"
 }
