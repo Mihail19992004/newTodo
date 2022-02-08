@@ -1,19 +1,19 @@
-import axios from 'axios';
-
-// interface Params {
-//   params: Record<string, unknown>
-// }
+import { httpClientConfig } from './AxiosPreset';
+import authorization from '../../stores/Authorization/Authorization';
 
 class HttpClient {
     
   private client = ( method: 'post' | 'put' | 'get' | 'delete', url: string, data?: Record<string, unknown> ) => {
 
-    return axios({
+    return httpClientConfig({
       method,
       baseURL: 'https://rest-service-todo.herokuapp.com/',
       // baseURL: 'http://localhost:5000',
       url,
       data,
+      headers: {
+        'Authorization': `Bearer ${ authorization.isAuth ? authorization.token ?? null : null}`,
+      },
     }).then(response => response);
   };
   

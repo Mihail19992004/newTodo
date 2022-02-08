@@ -24,5 +24,5 @@ module.exports = {
        "no-console": "error",
         "computed-property-spacing": "error",
     },
-    ignorePatterns: ['src/react-app-env.d.ts']
+    ignorePatterns: ['src/react-app-env.d.ts', 'src/i18n.tsx']
 };

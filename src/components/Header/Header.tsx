@@ -3,22 +3,23 @@ import {
   Box,
   Typography,
   InputAdornment,
-  Button,
-  IconButton,
+  Button, IconButton,
 } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
-import { SearchTextField, useClasses } from './Header.style';
-import { BoardMenu } from '../BoardMenu/BoardMenu';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
+import { SearchTextField, useClasses } from './Header.style';
+import { t } from 'i18next';
+import { BoardMenu } from '../BoardMenu';
 
 export const Header = () => {
 
   const classes = useClasses();
+  
   return (
     <Box className={ classes.container }>
       <Box className={ classes.nameHeader }>
         <Typography variant='h4' className={ classes.namePage } >
-          My board
+            { t('My board') }
         </Typography>
       </Box>
       <Box className={ classes.flexInput }>
@@ -41,7 +42,7 @@ export const Header = () => {
           />
         </Box>
         <Button className={ classes.modalbtn } variant='contained' color='primary'>
-          Create new
+            { t('Create new') }
         </Button>
       </Box>
     </Box>
