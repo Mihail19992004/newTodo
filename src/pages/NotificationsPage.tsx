@@ -1,8 +1,7 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 
 export const NotificationsPage = () => {
 
-  return (
-      <div>Notifications</div>
-  );
+  return <Box>Notifications</Box>;
 };

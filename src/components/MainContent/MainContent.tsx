@@ -8,7 +8,7 @@ export const MainContent: FC = () => {
   const classes = useClasses();
 
   return (
-    <Box className={classes.mainContainer}>
+    <Box className={ classes.mainContainer }>
       <AppRouter />
     </Box>
   );

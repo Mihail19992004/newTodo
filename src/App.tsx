@@ -6,7 +6,7 @@ import { Translate } from './components/Translate/Translate';
 import { Authorization } from './components/Authorization/Authorization';
 import { Notification } from './components/Notification/Notification';
 
-const useStyle = makeStyles(() => ({
+const useClasses = makeStyles(() => ({
   App: {
     minHeight: '100vh',
     display: 'flex',
@@ -15,8 +15,8 @@ const useStyle = makeStyles(() => ({
 }));
 
 export const App: FC = () => {
-
-  const classes = useStyle();
+  
+  const classes = useClasses();
 
   return (
 
