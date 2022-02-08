@@ -6,15 +6,18 @@ import { ThemeProvider } from '@material-ui/core';
 // eslint-disable-next-line import/namespace
 import { App } from './App';
 import { theme } from './theme';
+import './i18n';
 
-
-ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={ theme }>
-      <Router>
-        <App />
-      </Router>
-    </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+try {
+  ReactDOM.render(
+      <ThemeProvider theme={ theme }>
+        <Router>
+            <App />
+        </Router>
+      </ThemeProvider>,
+      document.getElementById('root'),
+  );
+} catch (error) {
+  // eslint-disable-next-line no-console
+  console.error('React render error: ', error);
+}

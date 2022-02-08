@@ -9,7 +9,11 @@ export const useClasses = makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignContent: 'center',
   },
+  '.MuiFormControl-root' : {
+    width : '100%',
+  },
   searchInput: {
+    width : '100%',
     padding: '14.5px 14px',
   },
   namePage: {
@@ -17,6 +21,7 @@ export const useClasses = makeStyles((theme) => ({
     fontSize: '38px',
   },
   flexInput: {
+    flex : 1,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -25,7 +30,7 @@ export const useClasses = makeStyles((theme) => ({
   searchCon: {
     display: 'flex',
     alignItems: 'center',
-    width: '50%',
+    width : '70%',
   },
   linkSvg: {
     fill: '#ccccd7',
@@ -49,6 +54,9 @@ export const useClasses = makeStyles((theme) => ({
 }));
 
 export const SearchTextField = styled(TextField)({
+  '& .MuiFormControl-root' : {
+    width : '100%',
+  },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       borderColor: '#ccccd7',

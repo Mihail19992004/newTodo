@@ -1,13 +1,46 @@
 import { services } from '../../services';
+import { makeAutoObservable } from 'mobx';
+import { AuthorizationProps } from '../../pages/AuthorizationPage';
+class AuthorizationStore {
+  
+  constructor() {
+    makeAutoObservable(this);
+    this.setIsAuth(localStorage.getItem('token'));
+  }
+  
+  isAuth: boolean = false;
 
-export class AuthorizationStore {
+  token: string | null; 
     
-  login = (username: string, password: string) => {
-    services.authorization.login(username, password);
+  setIsAuth = (token: string | null) => {
+    this.isAuth = !!token;
+    this.token = token;
+    if (!!token) {
+      localStorage.setItem('token', token);
+    } else {
+      localStorage.removeItem('token');
+    }
+  };
+
+  login = (data: AuthorizationProps) => {
+    services.authorization.login(data).then(({ token }) => {
+      this.setIsAuth(token);
+
+      
+    });
   };
   
-  registration = (username: string, password: string) => {
-    services.authorization.registration(username, password);
+  registration = (data: AuthorizationProps) => {
+    services.authorization.registration(data).then(({ token }) => {
+      this.setIsAuth(token);
+      
+    });
+  };
+  
+  logout = () => {
+    this.setIsAuth(null);
   };
     
 }
+
+export default new AuthorizationStore();

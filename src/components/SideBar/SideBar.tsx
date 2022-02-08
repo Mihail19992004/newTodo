@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Box } from '@material-ui/core';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ReactComponent as ReactLogo } from '../../assets/react-js.svg';
-import { IconBox } from '../IconBox/IconBox';
+import { IconBox } from '../IconBox';
 import { useClasses } from './SideBar.style';
 import { mainNavigation } from './SideBar.routes';
 
