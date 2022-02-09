@@ -1,51 +1,12 @@
 import React from 'react';
-import { Box, Button, makeStyles, TextField, Typography } from '@material-ui/core';
+import { Box, Button, TextField, Typography } from '@material-ui/core';
 import { observer } from 'mobx-react';
 import { useTranslation } from 'react-i18next';
-import authStore from '../stores/Authorization/Authorization';
+import authStore from '../../stores/Authorization/Authorization';
 import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-
-const useClasses = makeStyles((theme) => ({
-  container: {
-    background: '#b1fae8',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-  },
-  modal: {
-    width: '20%',
-    height: theme.spacing(45),
-    background: '#ffffff',
-    border: '1px solid #419bc7',
-    display: 'flex',
-    flexFlow: 'column',
-    alignItems: 'center',
-    borderRadius: 10,
-    padding: theme.spacing(4),
-  },
-  inputs: {
-    marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(5),
-  },
-  button: {
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
-  },
-}));
-
-export const AuthorizationScheme = yup.object().shape({
-  username: yup.string().min(3, 'Минимальная длина имени пользователя 3 символа').required('Обязательное поле'),
-  password: yup.string().min(3, 'Минимальная длина пароля 3 символа').required('Обязательное поле'),
-}).required();
-
-export interface AuthorizationProps {
-  username: string
-  password: string
-}
+import { useClasses } from './AuthorizationPage.style';
+import { AuthorizationProps, AuthorizationScheme } from '.';
 
 export const AuthorizationPage = observer(() => {
     

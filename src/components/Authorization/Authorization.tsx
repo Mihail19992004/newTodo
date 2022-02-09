@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { AuthorizationPage } from '../../pages/AuthorizationPage';
 import authStore from '../../stores/Authorization/Authorization';
 import { observer } from 'mobx-react';
+import { AuthorizationPage } from '../../pages/AuthorizationPage';
 
 export const Authorization: FC = observer(({ children }) => {
 

@@ -39,7 +39,7 @@ export const useClasses = makeStyles((theme) => ({
     marginRight : '20px',
     padding : 0,
   },
-  modalbtn: {
+  modalBtn: {
     marginLeft: '50px',
     height: '47px',
     textTransform: 'initial',
