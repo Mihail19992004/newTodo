@@ -21,5 +21,10 @@
   "User with the same name already exists": "Пользователь с таким именем уже существует",
   "Username does not exist": "Пользователя с таким именем не существует",
   "Wrong password": "Невеверный паполь",
-  "Add Todo": "Добавить задачу"
+  "Add Todo": "Добавить задачу",
+  "My tasks": "Мои задачи",
+  "Joint tasks": "Общие задачи",
+  "Favorites": "Избранные",
+  "Filters": "Фильтры",
+  "Search tasks": "Поиск задачи"
 }

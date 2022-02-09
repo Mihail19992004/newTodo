@@ -2,19 +2,19 @@ import { BoardPops } from '../../features';
 
 export const boardNav: BoardPops[] = [
   {
-    name: 'Tasks',
+    name: 'My tasks',
     link: 'tasks',
   },
   {
-    name: 'Objectives',
+    name: 'Joint tasks',
     link: 'objectives',
   },
   {
-    name: 'Watch list',
-    link: 'watch_list',
+    name: 'Favorites',
+    link: 'favorites',
   },
   {
-    name: 'Favorite',
-    link: 'favorite',
+    name: 'Filters',
+    link: 'filters',
   },
 ];

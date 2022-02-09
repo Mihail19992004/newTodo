@@ -1,6 +1,7 @@
 import { Box, makeStyles, Tab, Tabs } from '@material-ui/core';
 import React, { FC, ReactElement, useEffect, useMemo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link, Redirect, useLocation } from 'react-router-dom';
 import { boardNav } from './BoardNavigation.routes';
 
 export const useClasses = makeStyles(() => ({
@@ -22,11 +23,18 @@ export const BoardNavigation: FC = (): ReactElement => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  const { t } = useTranslation();
 
   useEffect(() => {
     const indexNumber = boardNav.findIndex((e) => e.link === activeTab);
     setValue(indexNumber);
   }, [activeTab]);
+
+  if (!boardNav.find(({ link }) => link === activeTab)) {
+
+    return <Redirect to='/boards/tasks' />;
+  }
+
 
   return (
     <Box className={ classes.elements }>
@@ -35,7 +43,7 @@ export const BoardNavigation: FC = (): ReactElement => {
           { boardNav.map((tabsItem) => (
             <Tab
               key={ tabsItem.name }
-              label={ tabsItem.name }
+              label={ t(tabsItem.name) }
               component={ Link }
               to={ `/boards/${ tabsItem.link }` }
             />

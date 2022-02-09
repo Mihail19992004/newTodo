@@ -36,7 +36,7 @@ export const Header = () => {
           </IconButton>
           <SearchTextField
             className={ classes.inputControl }
-            placeholder='Search text'
+            placeholder={ t('Search tasks')}
             InputProps={{
               classes: { input: classes.searchInput },
               startAdornment: (

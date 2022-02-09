@@ -21,5 +21,10 @@
   "User with the same name already exists": "User with the same name already exists",
   "Username does not exist": "Username does not exist",
   "Wrong password": "Wrong password",
-  "Add Todo": "Add Todo"
+  "Add Todo": "Add Todo",
+  "My tasks": "My tasks",
+  "Joint tasks": "Joint tasks",
+  "Favorites": "Favorites",
+  "Filters": "Filters",
+  "Search tasks": "Search tasks"
 }
