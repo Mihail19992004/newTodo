@@ -21,10 +21,10 @@ export const useClasses = makeStyles((theme) => ({
     fontSize: '38px',
   },
   flexInput: {
-    flex : 1,
+    width: '50%',
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
     alignContent: 'center',
   },
   searchCon: {
@@ -35,14 +35,16 @@ export const useClasses = makeStyles((theme) => ({
   linkSvg: {
     fill: '#ccccd7',
   },
-  nameHeader: {
-    width: '50%',
+  marLink : {
+    marginRight : '20px',
+    padding : 0,
   },
   modalbtn: {
+    marginLeft: '50px',
     height: '47px',
     textTransform: 'initial',
     fontWeight: 600,
-    width: '130px',
+    minWidth: '130px',
     border: '2px solid #341EFF',
     boxShadow: 'none',
     '&:hover': {
@@ -50,6 +52,11 @@ export const useClasses = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       backgroundColor: 'white',
     },
+  },
+  inputControl : {
+    minWidth : '250px',
+    maxWidth : '400px',
+    width : '100%',
   },
 }));
 

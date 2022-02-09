@@ -17,18 +17,21 @@ export const Header = () => {
   
   return (
     <Box className={ classes.container }>
-      <Box className={ classes.nameHeader }>
+      <Box>
         <Typography variant='h4' className={ classes.namePage } >
             { t('My board') }
         </Typography>
       </Box>
       <Box className={ classes.flexInput }>
         <Box className={ classes.searchCon }>
-          <IconButton>
+          <IconButton className={ classes.marLink }>
             <InsertLinkIcon className={ classes.linkSvg } />
           </IconButton>
-          <BoardMenu />
+          <IconButton className={ classes.marLink }>
+            <BoardMenu />
+          </IconButton>
           <SearchTextField
+            className={ classes.inputControl }
             placeholder='Search text'
             InputProps={{
               classes: { input: classes.searchInput },
