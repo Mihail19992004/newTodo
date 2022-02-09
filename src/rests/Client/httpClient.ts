@@ -7,8 +7,8 @@ class HttpClient {
 
     return httpClientConfig({
       method,
-      // baseURL: 'https://rest-service-todo.herokuapp.com/',
-      baseURL: 'http://localhost:5000',
+      baseURL: 'https://rest-service-todo.herokuapp.com/',
+      // baseURL: 'http://localhost:5000',
       url,
       data,
       headers: {
