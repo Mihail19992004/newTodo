@@ -8,7 +8,7 @@ export const IconBox: FC<IconBoxProps> = ({ children, type, active }): ReactElem
   const classes = useClasses();
 
   return (
-    <Link className={ `${classes.navLink} ${ active ? classes.active : null}` } to={ type }>
+    <Link className={ `${classes.navLink} ${ active ? classes.active : null}` } to={ `/${type}` }>
       { children }
     </Link>
   );

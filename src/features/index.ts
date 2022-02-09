@@ -1,2 +1,3 @@
-export type { NavProps } from './NavProps';
+export * from './NavProps';
 export * from './IconBoxProps';
+export * from './BoardPops';

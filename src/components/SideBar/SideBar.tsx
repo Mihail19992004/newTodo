@@ -2,6 +2,7 @@ import React, { FC, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Box } from '@material-ui/core';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// @ts-ignore
 import { ReactComponent as ReactLogo } from '../../assets/react-js.svg';
 import { IconBox } from '../IconBox';
 import { useClasses } from './SideBar.style';

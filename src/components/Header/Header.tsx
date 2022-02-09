@@ -8,27 +8,34 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import { SearchTextField, useClasses } from './Header.style';
-import { t } from 'i18next';
 import { BoardMenu } from '../BoardMenu';
+import modalStore from '../Modal/ModalStore';
+import { CreateTodoModal } from '../Modal/CreateTodoModal';
+import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
 
   const classes = useClasses();
-  
+  const { createModal } = modalStore;
+  const { t } = useTranslation();
+
   return (
     <Box className={ classes.container }>
-      <Box className={ classes.nameHeader }>
+      <Box>
         <Typography variant='h4' className={ classes.namePage } >
             { t('My board') }
         </Typography>
       </Box>
       <Box className={ classes.flexInput }>
         <Box className={ classes.searchCon }>
-          <IconButton>
+          <IconButton className={ classes.marLink }>
             <InsertLinkIcon className={ classes.linkSvg } />
           </IconButton>
-          <BoardMenu />
+          <IconButton className={ classes.marLink }>
+            <BoardMenu />
+          </IconButton>
           <SearchTextField
+            className={ classes.inputControl }
             placeholder='Search text'
             InputProps={{
               classes: { input: classes.searchInput },
@@ -41,7 +48,7 @@ export const Header = () => {
             variant='outlined'
           />
         </Box>
-        <Button className={ classes.modalbtn } variant='contained' color='primary'>
+        <Button onClick={() => createModal(<CreateTodoModal/>, 'create_todo_modal')} className={ classes.modalBtn } variant='contained' color='primary'>
             { t('Create new') }
         </Button>
       </Box>

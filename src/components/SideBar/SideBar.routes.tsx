@@ -18,7 +18,7 @@ export const mainNavigation: NavProps[] = [
     component: <DashboardIcon />,
   },
   {
-    name: 'extensions',
+    name: 'extentsions',
     component: <ExtensionIcon />,
   },
   {
