@@ -1,4 +1,5 @@
 import { createTheme } from '@material-ui/core/styles';
+import '@fontsource/roboto';
 
 export const theme = createTheme({
   palette: {
@@ -10,6 +11,6 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Open Sans", sans-serif',
+    fontFamily: '"Roboto", sans-serif',
   },
 });

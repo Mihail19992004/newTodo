@@ -1,26 +1,19 @@
 import React, { FC, Suspense } from 'react';
-import { Box, makeStyles } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { SideBar } from './components/SideBar';
 import { MainContent } from './components/MainContent';
 import { Translate } from './components/Translate/Translate';
 import { Authorization } from './components/Authorization/Authorization';
-import { Notification } from './components/Notification/Notification';
-
-const useClasses = makeStyles(() => ({
-  App: {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'row',
-  },
-}));
+import { Notification } from './components/Notification';
+import { useClasses } from './theme/App.style';
+import { LoaderTranslation } from './components/LoaderTranslation';
 
 export const App: FC = () => {
   
   const classes = useClasses();
 
   return (
-
-      <Suspense fallback={ <div>...Loading</div> }>
+      <Suspense fallback={ <LoaderTranslation /> }>
           <Translate>
               <Notification>
                 <Authorization>

@@ -6,16 +6,17 @@ class Todo {
     
   constructor() {
     makeAutoObservable(this);
+    this.getElements();
   }
   
   elements: Array<TodoProps> = [];
   
-  setElements = (elements: Array<TodoProps>) => {
+  setElements = (elements: Array<TodoProps> ) => {
     this.elements = elements;
   };
   
   getElements = () => {
-    services.todo.get().then((data) => this.setElements(data));
+    services.todo.get().then((data) => this.setElements(data.elements));
   };
   
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

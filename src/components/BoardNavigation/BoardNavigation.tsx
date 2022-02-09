@@ -1,7 +1,7 @@
-import { Box, makeStyles, Tab, Tabs } from '@material-ui/core';
+import { Box, Divider, makeStyles, Tab, Tabs } from '@material-ui/core';
 import React, { FC, ReactElement, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, Redirect, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { boardNav } from './BoardNavigation.routes';
 
 export const useClasses = makeStyles(() => ({
@@ -16,25 +16,19 @@ export const useClasses = makeStyles(() => ({
 
 export const BoardNavigation: FC = (): ReactElement => {
 
+  const { t } = useTranslation();
   const [value, setValue] = React.useState(0);
   const { pathname } = useLocation();
-  const activeTab = useMemo((): string => pathname.split('/')[2], [pathname]);
+  const activeTabLink = useMemo((): string => pathname.split('/')[2], [ pathname ]);
   const classes = useClasses();
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-  const { t } = useTranslation();
 
   useEffect(() => {
-    const indexNumber = boardNav.findIndex((e) => e.link === activeTab);
+    const indexNumber = boardNav.findIndex(({ link }) => link === activeTabLink);
     setValue(indexNumber);
-  }, [activeTab]);
-
-  if (!boardNav.find(({ link }) => link === activeTab)) {
-
-    return <Redirect to='/boards/tasks' />;
-  }
-
+  }, [ activeTabLink ]);
 
   return (
     <Box className={ classes.elements }>
@@ -49,6 +43,7 @@ export const BoardNavigation: FC = (): ReactElement => {
             />
           )) }
         </Tabs>
+        <Divider light />
       </Box>
     </Box>
   );

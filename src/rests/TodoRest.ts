@@ -5,10 +5,11 @@ import { TodoProps } from '../features/TodoProps';
 
 export class TodoRest {
     
-    
-  get = (): Promise<Array<TodoProps>> => {
+  allElements?: TodoProps[];   
+  
+  get = (): Promise<{ elements: Array<TodoProps> }> => {
     return httpClient.get( PATH.TODO )
-      .then(({ data }: AxiosResponse<Array<TodoProps>> ) => data);
+      .then(({ data }: AxiosResponse<{ elements :Array<TodoProps> }> ) => (data));
   };
   
   post = (todo: TodoProps): Promise<Array<TodoProps>> => {
