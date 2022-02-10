@@ -26,5 +26,11 @@
   "Joint tasks": "Общие задачи",
   "Favorites": "Избранные",
   "Filters": "Фильтры",
-  "Search tasks": "Поиск задачи"
+  "Search tasks": "Поиск задачи",
+  "User deleted": "Пользователь удален",
+  "Delete user": "Удалить пользователя",
+  "Yes": "Да",
+  "No": "Нет",
+  "Social page": "Социальная страница",
+  "Are you sure you want to delete the user? All tasks associated with it will also be deleted.": "Вы уверены, что хотите, удалить пользователя? Все задачи связанные с ним будут также удалены."
 }

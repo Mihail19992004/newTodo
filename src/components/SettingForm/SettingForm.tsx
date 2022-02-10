@@ -5,6 +5,8 @@ import { MenuItem, Box, Typography, Button } from '@material-ui/core';
 import Select from '@material-ui/core/Select';
 import { useTranslation } from 'react-i18next';
 import { useClasses } from './SettingForm.style';
+import modalStore from '../Modal/ModalStore';
+import { ConfirmModal } from '../Modal/ConfirmModal/ConfirmModal';
 
 export const useSettingForm = (props: UseSettingFormProps): UseSettingForm => {
 
@@ -24,7 +26,6 @@ export const useSettingForm = (props: UseSettingFormProps): UseSettingForm => {
   const [defaultValues, setDefaultValue] = useState<SettingsFormProps>({ locale });
   const { t } = useTranslation();
   const classes = useClasses();
-
   const form = useForm<SettingsFormProps>({
     mode: 'all',
     defaultValues,
@@ -38,16 +39,13 @@ export const useSettingForm = (props: UseSettingFormProps): UseSettingForm => {
       setDefaultValue(data);
       return onSubmit && onSubmit(data, event);
     })(event);
-
+  const { createModal } = modalStore;
   const onResetForm = (event: FormEvent<HTMLFormElement>): void => onReset && onReset(form.getValues(), event);
   return {
 
     Form: (
         <FormProvider { ...form }>
           <Box className={ classes.container }>
-            <Typography className={ classes.namePage }>
-              { t('Application setting') }
-            </Typography>
             <form
                 className={ classes.container }
                 id={ id }
@@ -70,12 +68,22 @@ export const useSettingForm = (props: UseSettingFormProps): UseSettingForm => {
                     <MenuItem value="en">{ t('English') }</MenuItem>
                   </Select>
                 </Box>
-                <Button
-                  variant='outlined'
-                  onClick={logout}
-                >
-                  { t('Logout') }
-                </Button>
+                <Box>
+                  <Button
+                      className={classes.buttons}
+                      variant='outlined'
+                      onClick={logout}
+                  >
+                    { t('Logout') }
+                  </Button>
+                  <Button
+                      className={classes.buttons}
+                      variant='outlined'
+                      onClick={() => createModal(<ConfirmModal/>, 'confirm_delete_acc')}
+                  >
+                    { t('Delete user') }
+                  </Button>
+                </Box>
               </Box>
             </form>
           </Box>

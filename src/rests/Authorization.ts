@@ -27,6 +27,10 @@ export class AuthorizationRest {
   login = (user: AuthorizationProps): Promise<AuthResponseProps> => {
     return httpClient.post( PATH.AUTH_LOGIN, { ...user })
       .then(({ data }: AxiosResponse<AuthResponseProps>) => data);
-  }; 
+  };
+
+  deleteUser = (id: string): Promise<AxiosResponse<void>> => {
+    return httpClient.delete( PATH.AUTH_DELETE, +id);
+  };
     
 }

@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Box } from '@mui/material';
 import { Button, makeStyles } from '@material-ui/core';
 import { SettingsFormProps } from '../features/Settings';
-import { useSettingForm } from '../components/SettingForm/SettingForm';
+import { useSettingForm } from '../components/SettingForm';
 import authStore from '../stores/Authorization/Authorization';
+import { Header } from '../components/Header';
 
 const useClasses = makeStyles(() => ({
   container: {
@@ -38,10 +39,10 @@ export const SettingsPage = () => {
     logout: authStore.logout,
   });
 
-
   return (
      <Box className={ classes.container }>
         <Box className={ classes.containerSettings }>
+          <Header title={ t('Application setting') } />
           { Form }
         </Box>
             <Box>

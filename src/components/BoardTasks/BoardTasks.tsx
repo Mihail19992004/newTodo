@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { observer } from 'mobx-react';
 import todoStore from '../../stores/Todo/Todo';
@@ -7,7 +7,11 @@ import { useClasses } from './BoardTask.style';
 export const BoardTasks = observer(() => {
     
   const classes = useClasses();
-  const { elements } = todoStore;
+  const { elements, getElements } = todoStore;
+
+  useEffect(() => {
+    getElements();
+  }, [getElements]);
   
   return (
         <Box className={ classes.container }>

@@ -1,10 +1,11 @@
 import React from 'react';
-import { BoardsPage } from '../pages/BoardsPage';
+import { BoardsPage } from '../pages/BoardsPage/BoardsPage';
 import { ChartPage } from '../pages/ChartPage';
 import { ExtensionPage } from '../pages/ExtensionPage';
 import { NotificationsPage } from '../pages/NotificationsPage';
 import { PeoplePage } from '../pages/PeoplePage';
 import { SettingsPage } from '../pages/SettingsPage';
+import { SocialPage } from '../pages/SocialPage/SocialPage';
 
 export interface IRoute {
   path: string
@@ -19,6 +20,7 @@ export enum RouteNames {
   PEOPLE_PAGE = '/people',
   CHART_PAGE = '/chart',
   SETTINGS_PAGE = '/settings',
+  SOCIAL_PAGE = '/social',
 }
 
 export const boardsRoutes: IRoute[] = [
@@ -28,5 +30,6 @@ export const boardsRoutes: IRoute[] = [
   { path: RouteNames.PEOPLE_PAGE, component: PeoplePage },
   { path: RouteNames.CHART_PAGE, component: ChartPage },
   { path: RouteNames.SETTINGS_PAGE, component: SettingsPage },
+  { path: RouteNames.SOCIAL_PAGE, component: SocialPage },
 ];
 

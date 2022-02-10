@@ -1,12 +1,11 @@
 import React, { FC, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Box } from '@material-ui/core';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 // @ts-ignore
 import { ReactComponent as ReactLogo } from '../../assets/react-js.svg';
 import { IconBox } from '../IconBox';
 import { useClasses } from './SideBar.style';
-import { mainNavigation } from './SideBar.routes';
+import { mainNavigation, social } from './SideBar.routes';
 
 export const SideBar: FC = () => {
 
@@ -28,7 +27,12 @@ export const SideBar: FC = () => {
           ))}
         </Box>
       </Box>
-      <AccountCircleIcon />
+        <IconBox
+            type={ social.name }
+            active={ activeTab === social.name }
+        >
+            { social.component }
+        </IconBox>
     </Box>
   );
 };

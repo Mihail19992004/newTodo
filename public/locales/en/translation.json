@@ -26,5 +26,11 @@
   "Joint tasks": "Joint tasks",
   "Favorites": "Favorites",
   "Filters": "Filters",
-  "Search tasks": "Search tasks"
+  "Search tasks": "Search tasks",
+  "User deleted": "User deleted",
+  "Delete user": "Delete user",
+  "Yes": "Yes",
+  "No": "No",
+  "Social page": "Social page",
+  "Are you sure you want to delete the user? All tasks associated with it will also be deleted.": "Are you sure you want to delete the user? All tasks associated with it will also be deleted."
 }

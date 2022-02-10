@@ -6,10 +6,10 @@ export const useClasses = makeStyles((theme) => ({
     display: 'flex',
     flexFlow: 'column',
     alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     height: '100%',
   },
   leftContainer: {
-    paddingTop: theme.spacing(10),
     width: '50%',
     display: 'flex',
     flexFlow: 'column',
@@ -18,6 +18,9 @@ export const useClasses = makeStyles((theme) => ({
   namePage: {
     fontWeight: 'bold',
     fontSize: '38px',
+  },
+  buttons: {
+    marginLeft: theme.spacing(2),
   },
   settingFont: {
     fontSize: 20,

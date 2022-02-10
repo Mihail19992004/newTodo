@@ -6,7 +6,6 @@ class Todo {
     
   constructor() {
     makeAutoObservable(this);
-    this.getElements();
   }
   
   elements: Array<TodoProps> = [];

@@ -6,7 +6,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import PollIcon from '@mui/icons-material/Poll';
 import SettingsIcon from '@mui/icons-material/Settings';
 import React from 'react';
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export const mainNavigation: NavProps[] = [
   {
@@ -34,3 +34,8 @@ export const mainNavigation: NavProps[] = [
     component: <SettingsIcon />,
   },
 ];
+
+export const social: NavProps = {
+  name: 'social',
+  component:<AccountCircleIcon />,
+};
